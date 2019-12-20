@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Auto Refresh</title>
+<HTA:APPLICATION
+  APPLICATIONNAME="Auto Refresh"
+  ID="AutoRefresh"/>
+</head>
+
+<SCRIPT LANGUAGE="VBScript">
+Dim timerID
+
+Sub Window_OnLoad
+  timerID = window.setInterval("RefreshTime", 1000) 'milliseconds
+  RefreshTime
+End Sub
+
+Sub RefreshTime
+  CurrentTime.InnerHTML = Now
+End Sub
+
+Sub OnClickButtonStop()
+  window.clearInterval(timerID)
+End Sub
+</SCRIPT>
+
+
+<body>
+
+<span id="CurrentTime"></span>
+<BR><BR>
+<input type="button" name="Stopbutton" id="Stopbutton" value="Stop Timer" onclick="OnClickButtonStop">
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Radio Buttons</title>
+<HTA:APPLICATION
+  APPLICATIONNAME="Radio Buttons"
+  ID="RadioButtons"/>
+</head>
+
+<script language="VBScript">
+
+Sub OnClickButtondisplay()
+  For i=0 to myradio.length-1
+    If myradio(i).Checked Then
+      MsgBox myradio(i).Value
+      Exit For
+    End If
+  Next
+End Sub
+</script>
+
+<body bgcolor="white">
+
+<!--Add your controls here-->
+
+<input type="radio" name="myradio" CHECKED value="radio1">radio1<BR>
+<input type="radio" name="myradio" value="radio2">radio2<BR>
+<input type="radio" name="myradio" value="radio3">radio3<BR>
+<input type="radio" name="myradio" value="radio4">radio4<BR>
+<BR><BR>
+<input type="button" name="display" id="display" value="Display Value" onclick="OnClickButtondisplay">
+<!--{{InsertControlsHere}}-Do not remove this line-->
+</body>
+</html>

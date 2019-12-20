@@ -1,0 +1,20 @@
+<html> 
+<head> 
+<title>Modal Example</title>
+<HTA:APPLICATION 
+     APPLICATIONNAME="MainModal">
+</head>
+
+<script language="VBScript"> 
+Sub ShowDialog 
+   intReturn = ShowModalDialog("modaldialog.hta") 
+   textbox.Value = intReturn
+End Sub
+</script> 
+
+<body> 
+<button onclick="ShowDialog">
+  Show Dialog Box</button> <p>
+<input type="text" name="textbox">
+</body> 
+</html> 

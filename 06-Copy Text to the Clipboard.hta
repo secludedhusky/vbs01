@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Clipboard</title>
+<HTA:APPLICATION
+  APPLICATIONNAME="Clipboard"
+  ID="Clipboard"
+  VERSION="1.0"/>
+</head>
+
+<script language="VBScript">
+
+Sub OnClickButtonCopy()
+    strCopy = BasicTextArea.Value
+    document.parentwindow.clipboardData.SetData "text", strCopy
+End Sub
+
+Sub OnClickButtonPaste()
+  BasicTextArea.InnerHTML = document.parentwindow.clipboardData.GetData("text")
+End Sub
+</script>
+
+<body bgcolor="white">
+
+<!--Add your controls here-->
+
+<textarea name="BasicTextArea" id="BasicTextArea" rows="5" cols="40"></textarea>
+<BR><BR>
+<input type="button" name="Copy" id="Copy" value="Copy Text to the Clipboard" onclick="OnClickButtonCopy">
+<BR><BR>
+<input type="button" name="Paste" id="Paste" value="Paste Text from the Clipboard" onclick="OnClickButtonPaste">
+<!--{{InsertControlsHere}}-Do not remove this line-->
+</body>
+</html>

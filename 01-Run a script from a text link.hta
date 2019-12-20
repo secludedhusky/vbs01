@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Run a script from a text link</title>
+
+<HTA:APPLICATION
+  APPLICATIONNAME="Run a script from a text link"
+  ID="RunScriptFromTextLink"/>
+
+</head>
+
+<SCRIPT Language="VBScript">
+
+Sub RunScript
+    Msgbox "The script has run."
+End Sub
+
+</SCRIPT>
+
+<body bgcolor="buttonface">
+
+<span style="text-decoration:underline;color:blue;cursor:hand"
+id="ClickableSpan" onClick="RunScript" >
+Click here to run the script</span>
+
+</body>
+</html>

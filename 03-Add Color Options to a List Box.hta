@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Add Color Options to a List Box</title>
+<HTA:APPLICATION
+  APPLICATIONNAME="Add Color Options to a List Box"
+  ID="objColorOptions"/>
+</head>
+
+<SCRIPT Language="VBScript">
+
+Sub Window_OnLoad
+
+    For i = 1 to 20
+        Set objOption = Document.createElement("OPTION")
+        objOption.Text = "Option No. " & i
+        objOption.Value = i
+        If i = 2 or i = 4 Then
+            objOption.style.backgroundcolor = "yellow"
+        End If
+        mylistbox.Add(objOption)
+    Next
+ 
+End Sub
+</SCRIPT>
+
+<body bgcolor="buttonface">
+<select size="10" name="mylistbox" style="width:300px" >
+</select>
+</body>
+</html>
